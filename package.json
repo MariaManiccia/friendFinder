@@ -1,0 +1,20 @@
+{
+  "name": "friendFinder",
+  "version": "1.0.0",
+  "description": "<h1>Friend Finder App</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaManiccia/friendFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariaManiccia/friendFinder/issues"
+  },
+  "homepage": "https://github.com/MariaManiccia/friendFinder#readme"
+}
