@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/MariaManiccia/friendFinder/issues"
   },
-  "homepage": "https://github.com/MariaManiccia/friendFinder#readme"
+  "homepage": "https://github.com/MariaManiccia/friendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-path": "^0.3.8",
+    "path": "^0.12.7"
+  }
 }
