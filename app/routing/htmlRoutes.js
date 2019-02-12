@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     // Making an html GET request, directing it to the right html page
     app.get("public/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "../survey.html"));
+        res.sendFile(path.join(__dirname, "../app/public/survey.html"));
     });
 
     // Setting the default to the home page
