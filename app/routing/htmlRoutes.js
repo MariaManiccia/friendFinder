@@ -11,7 +11,7 @@ module.exports = function (app) {
     });
 
     // Setting the default to the home page
-    app.get("*", function (req, res) {
+    app.get("/home", function (req, res) {
         res.sendFile(path.join(__dirname, "/public/home.html"));
     });
 };
