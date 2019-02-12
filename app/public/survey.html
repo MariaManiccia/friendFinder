@@ -1,15 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- details -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Friend Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+    <title>Friend Survey</title>
+    
+    <!-- links to boostrap, fontawesome, and our other files-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <script src="../server.js"></script>
 </head>
+
 <body>
+    <!--Main content-->
+    <div class="container">
+        <br>
+        <h1>Survey Questions</h1>
+        <hr>
+        <h4>About you...</h4>
+        <hr>
+        <!--Survey form-->
+        <!--Starting required questions-->
+        <!--Name-->
+        <div class="form-group">
+            <label for="name">Name*</label>
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name here">
+        </div>
+        <!--Photo-->
+        <div class="form-group">
+            <label for="photo">Link to photo*</label>
+            <input type="text" class="form-control" id="photo" aria-describedby="photoHelp" placeholder="Enter link here">
+        </div>
+        <hr>
+
+        <!--Questions section 1-10-->
+        <h4>Question 1</h4>
+        <h5>Rappers can have ghostwriters.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 2</h4>
+        <h5>There can be multiple female rappers.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 3</h4>
+        <h5>Cardi should stay with Offset.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 4</h4>
+        <h5>Drake hid his kid from the world.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 5</h4>
+        <h5>The Carters are Legendary.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 6</h4>
+        <h5>Pusha T can sell albums without talking about Drake.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 7</h4>
+        <h5>Nicki Minaj is the GOAT.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 8</h4>
+        <h5>Kanye is a Kardashian.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 9</h4>
+        <h5>Beyonce is the greatest performer of all time.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+
+        <h4>Question 10</h4>
+        <h5>Cardi B deserved her Grammy.</h5>
+        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+            <option value="" selected></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    </div>
+
+    <footer>
+        <p>API Friends List | Github Repo</p>
+    </footer>
     
 </body>
 </html>
