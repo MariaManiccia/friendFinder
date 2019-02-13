@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- details -->
     <meta charset="utf-8">
@@ -7,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Friend Survey</title>
-    
+
     <!-- links to boostrap, fontawesome, and our other files-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./style.css">
-    <script src="../server.js"></script>
+    <script src="../../server.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
         <!--Questions section 1-10-->
         <h4>Question 1</h4>
         <h5>Rappers can have ghostwriters.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q1">
+        <select data-placeholder="q1" class="chosen-container chosen-container-single" id="q1">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -55,7 +56,7 @@
 
         <h4>Question 2</h4>
         <h5>There can be multiple female rappers.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q2">
+        <select data-placeholder="q2" class="chosen-container chosen-container-single" id="q2">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -68,7 +69,7 @@
 
         <h4>Question 3</h4>
         <h5>Cardi should stay with Offset.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q3">
+        <select data-placeholder="q3" class="chosen-container chosen-container-single" id="q3">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -81,7 +82,7 @@
 
         <h4>Question 4</h4>
         <h5>Drake hid his kid from the world.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q4">
+        <select data-placeholder="q4" class="chosen-container chosen-container-single" id="q4">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -94,7 +95,7 @@
 
         <h4>Question 5</h4>
         <h5>The Carters are Legendary.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q5">
+        <select data-placeholder="q5" class="chosen-container chosen-container-single" id="q5">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -107,7 +108,7 @@
 
         <h4>Question 6</h4>
         <h5>Pusha T can sell albums without talking about Drake.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q6">
+        <select data-placeholder="q6" class="chosen-container chosen-container-single" id="q6">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -120,7 +121,7 @@
 
         <h4>Question 7</h4>
         <h5>Nicki Minaj is the GOAT.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q7">
+        <select data-placeholder="q7" class="chosen-container chosen-container-single" id="q7">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -133,7 +134,7 @@
 
         <h4>Question 8</h4>
         <h5>Kanye is a Kardashian.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q8">
+        <select data-placeholder="q8" class="chosen-container chosen-container-single" id="q8">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -146,7 +147,7 @@
 
         <h4>Question 9</h4>
         <h5>Beyonce is the greatest performer of all time.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q9">
+        <select data-placeholder="q9" class="chosen-container chosen-container-single" id="q9">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -159,7 +160,7 @@
 
         <h4>Question 10</h4>
         <h5>Cardi B deserved her Grammy.</h5>
-        <select data-placeholder="" class="chosen-container chosen-container-single" id="q10">
+        <select data-placeholder="q10" class="chosen-container chosen-container-single" id="q10">
             <option value="" selected></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -169,12 +170,60 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-outline-info col-12"><i class="fas fa-bullhorn"></i> Submit</button>
+        <button type="button" class="btn btn-outline-info col-12"><i class="fas fa-bullhorn" id="submitBtn"></i> Submit</button>
     </div>
 
     <footer>
         <p>API Friends List | Github Repo</p>
     </footer>
-    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+
 </html>
+
+<script type="text/javascript">
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        // Form validation
+        var valid = true;
+        if ($("#name").val() === "" || $("#photo").val() === "") {
+            valid = false;
+        } else if ($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() ===
+            "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6")
+            .val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $(
+                "#question9").val() === "empty" || $("#question10").val() === "empty") {
+            valid = false;
+        }
+        if (valid === true) {
+            var newUser = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            var currentURL = window.location.origin;
+            // Ajax call for receiving response after POST req
+            $.post(currentURL + "/api/friends", newUser, function (data) {
+                $("#friend").text(data.name);
+                $("#friendPhoto").attr("src", data.photo);
+                $("#friendModal").modal("toggle");
+            });
+        } else {
+            // If a required field is missing, show alert
+            alert("Survey is incomplete!");
+        }
+    });
+</script>
