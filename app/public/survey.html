@@ -204,20 +204,16 @@
 </html>
 
 
-<!-- The JS/Jquery for the game-->
+<!-- Game JS-->
 <script type="text/javascript">
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
-        // Form validation
+        // check the form
         var valid = true;
         if ($("#name").val() === "" || $("#photo").val() === "") {
             valid = false;
         } 
-        else if 
-        ($("#q1").val() === "empty" || $("#q2").val() === "empty" || $("#q3").val() ===
-            "empty" || $("#q4").val() === "empty" || $("#q5").val() === "empty" || $("#q6")
-            .val() === "empty" || $("#q7").val() === "empty" || $("#q8").val() === "empty" || $(
-            "#q9").val() === "empty" || $("#q10").val() === "empty") {
+        else if ($("#q1").val() === "empty" || $("#q2").val() === "empty" || $("#q3").val() === "empty" || $("#q4").val() === "empty" || $("#q5").val() === "empty" || $("#q6").val() === "empty" || $("#q7").val() === "empty" || $("#q8").val() === "empty" || $("#q9").val() === "empty" || $("#q10").val() === "empty") {
             valid = false;
         }
         if (valid === true) {
@@ -238,14 +234,15 @@
                 ]
             };
             var currentURL = window.location.origin;
-            // Ajax call for receiving response after POST req
+            console.log(currentURL);
+            
             $.post(currentURL + "/api/friends", newUser, function (data) {
                 $("#friend").text(data.name);
                 $("#friendPhoto").attr("src", data.photo);
                 $("#friendModal").modal("toggle");
             });
         } else {
-            // If a required field is missing, show alert
+            // if incomplete
             alert("Survey is incomplete!");
         }
     });

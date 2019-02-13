@@ -1,16 +1,17 @@
-var friendsArray = require("../data/friends");
+var friends = require("../data/friends");
 
 module.exports = function(app) {
 
-  // Return all friends
+  // GET method
   app.get("/api/friends", function(req, res) {
-    res.json(friendsArray);
+    res.json(friends);
   });
 
+  // POST method
   app.post("/api/friends", function(req, res) {
     console.log(req.body.scores);
 
-    // Receive friends stats
+    // friends stats
     var user = req.body;
 
     // parseInt for scores
@@ -24,14 +25,16 @@ module.exports = function(app) {
 
     //  comparing the score
     //  whatever the difference is, add to the total difference
-    for(var i = 0; i < friendsArray.length; i++) {
+    for(var i = 0; i < friends.length; i++) {
+
       var totalDiff = 0;
-      for(var j = 0; j < friendsArray[i].scores.length; j++) {
-        var difference = Math.abs(user.scores[j] - friendsArray[i].scores[j]);
+      
+      for(var j = 0; j < friends[i].scores.length; j++) {
+        var difference = Math.abs(user.scores[j] - friends[i].scores[j]);
         totalDiff += difference;
       }
 
-      // if there is a new minimum, change the best friend index and set the new minimum for next iteration comparisons
+      // compare
       if(totalDiff < minDiff) {
         friendIndex = i;
         minDiff = totalDiff;
@@ -39,9 +42,9 @@ module.exports = function(app) {
     }
 
     // add user the friend array
-    friendsArray.push(user);
+    friends.push(user);
 
     // send the match
-    res.json(friendsArray[friendIndex]);
+    res.json(friends[friendIndex]);
   });
 };

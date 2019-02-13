@@ -1,6 +1,6 @@
 // Our dummy array for our friend infromation
 
-var friendArray = [
+var friends = [
     
 	{
 		name: "Nicki",
@@ -31,7 +31,7 @@ var friendArray = [
   ];
   
   // To export the array
-  module.exports = friendArray;
+  module.exports = friends;
   
 
   
