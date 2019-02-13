@@ -170,7 +170,7 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-outline-info col-12" id="submitBtn"><i class="fas fa-bullhorn"></i> Submit</button>
+        <button type="button" class="btn btn-outline-info col-12" id="submitBtn" data-toggle="modal" data-target="#friendModal" ><i class="fas fa-bullhorn"></i> Submit</button>
     </div>
 
     <!-- Modal after match -->
@@ -192,9 +192,13 @@
 			</div>
 		</div>
 
-    <footer>
-        <p>API Friends List | Github Repo</p>
-    </footer>
+        <footer>
+            <div class="container">
+                <a href="/api/friends">New-Best-Friend API</a>
+                <span>|</span>
+                <a href="https://github.com/mariamaniccia/friendFinder">GitHub Repo</a>
+            </div>
+        </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
