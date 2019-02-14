@@ -10,11 +10,13 @@
     <title>Friend Survey</title>
 
     <!-- links to boostrap, fontawesome, and our other files-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">    
-   
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
     <script src="../../server.js"></script>
 </head>
 
@@ -170,16 +172,17 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-outline-info col-12" id="submitBtn" data-toggle="modal" data-target="#friendModal" ><i class="fas fa-bullhorn"></i> Submit</button>
-    </div>
+        <button type="button" class="btn btn-outline-info col-12" id="submitBtn" data-toggle="modal" data-target="#friendModal"><i
+                class="fas fa-bullhorn"></i> Submit</button>
+</div>
 
-    <!-- Modal after match -->
-		<div id="friendModal" class="modal fade" role="dialog">
+        <!-- Modal after match -->
+        <div id="friendModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 class="modal-title">Your New Bud!</h3>
+						<h3 class="modal-title">New Buddy: </h3>
 					</div>
 					<div class="modal-body">
 						<h2 id="friend"></h2>
@@ -192,18 +195,20 @@
 			</div>
 		</div>
 
-        <footer>
-            <div class="container">
-                <a href="/api/friends">New-Best-Friend API</a>
-                <span>|</span>
-                <a href="https://github.com/mariamaniccia/friendFinder">GitHub Repo</a>
-            </div>
-        </footer>
+    <footer>
+        <div class="container">
+            <a href="/api/friends">Friend API</a>
+            <span>|</span>
+            <a href="https://github.com/mariamaniccia/friendFinder">GitHub Repo</a>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+
+
 
 </html>
 
@@ -216,8 +221,10 @@
         var valid = true;
         if ($("#name").val() === "" || $("#photo").val() === "") {
             valid = false;
-        } 
-        else if ($("#q1").val() === "empty" || $("#q2").val() === "empty" || $("#q3").val() === "empty" || $("#q4").val() === "empty" || $("#q5").val() === "empty" || $("#q6").val() === "empty" || $("#q7").val() === "empty" || $("#q8").val() === "empty" || $("#q9").val() === "empty" || $("#q10").val() === "empty") {
+        } else if ($("#q1").val() === "empty" || $("#q2").val() === "empty" || $("#q3").val() === "empty" || $(
+                "#q4").val() === "empty" || $("#q5").val() === "empty" || $("#q6").val() === "empty" || $("#q7")
+            .val() === "empty" || $("#q8").val() === "empty" || $("#q9").val() === "empty" || $("#q10").val() ===
+            "empty") {
             valid = false;
         }
         if (valid === true) {
@@ -239,7 +246,7 @@
             };
             var currentURL = window.location.origin;
             console.log(currentURL);
-            
+
             $.post(currentURL + "/api/friends", newUser, function (data) {
                 $("#friend").text(data.name);
                 $("#friendPhoto").attr("src", data.photo);
