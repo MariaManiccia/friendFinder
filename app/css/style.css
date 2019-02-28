@@ -1,6 +1,12 @@
 #main{
-    padding-left: 60px;
-    float: right;
-    margin-right: 110px;
     margin-top: 30px;
+}
+
+#bestFriendModal {
+	text-align: center;
+}
+
+#bestFriendPhoto {
+	max-width: 100%;
+	height: auto;
 }

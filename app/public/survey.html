@@ -2,22 +2,16 @@
 <html>
 
 <head>
-    <!-- details -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Friend Survey</title>
+    <title>Friend Quiz</title>
 
-    <!-- links to boostrap, fontawesome, and our other files-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-        crossorigin="anonymous">
+    <!-- links to boostrap, fontawesome, and other files-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="https://code.jquery.com/jquery.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -172,28 +166,29 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-outline-info col-12" id="submitBtn"><i
+        <button type="button"data-toggle="modal" data-target="#friendModal" class="btn btn-outline-info col-12" id="submitBtn"><i
                 class="fas fa-bullhorn"></i> Submit</button>
 </div>
 
         <!-- Modal after match -->
-        <div id="friendModal" class="modal fade" role="dialog" aria-labelledby="friendModal" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 class="modal-title">New Buddy: </h3>
-					</div>
-					<div class="modal-body">
-						<h2 id="friend"></h2>
-						<img id="friendPhoto" src="#">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div id="friendModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Your New Friend: </h1>
+                        </div>
+                        <div class="modal-body">
+                            <h2 id="friend"></h2>
+                            <img id="friendPhoto" src="#">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <footer>
         <div class="container">
@@ -211,11 +206,15 @@
 
 
 <!-- Game JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function() {
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
-        // check the form
+        // Check if the form is filled out
         var valid = true;
         if ($("#name").val() === "" || $("#photo").val() === "") {
             valid = false;
@@ -225,6 +224,7 @@ $(document).ready(function() {
             "empty") {
             valid = false;
         }
+        // If it's filled out, grab the new friend
         if (valid === true) {
             var newUser = {
                 name: $("#name").val().trim(),
@@ -242,16 +242,28 @@ $(document).ready(function() {
                     $("#q10").val()
                 ]
             };
+
             var currentURL = window.location.origin;
             console.log(currentURL);
+            console.log(newUser);
 
-            $.post(currentURL + "/api/friends", newUser, function (data) {
-                $("#friend").text(data.name);
-                $("#friendPhoto").attr("src", data.photo);
-                $("#friendModal").modal("show");
+            // Testing Error Cannot find $.post
+            //$.noConflict();
+            // function post(){
+            //$('#submit').modal();
+            $.post(currentURL + "/api/friends", newUser, function(data) {
+                // not working
+                console.log(data.name);
+				$("#friendName").text(data.name);
+				$("#friendPhoto").attr("src", data.photo);
+                $("#friendModal").modal("toggle");
+            //     $('#friendModal').modal({
+            //                                 show: true
+            //                             });
             });
+        // };
         } else {
-            // if incomplete
+            // If incomplete
             alert("Survey is incomplete!");
         }
     });
