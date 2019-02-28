@@ -10,14 +10,14 @@
     <title>Friend Survey</title>
 
     <!-- links to boostrap, fontawesome, and our other files-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
-
-    <script src="../../server.js"></script>
+    <script src="https://code.jquery.com/jquery.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -172,12 +172,12 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-outline-info col-12" id="submitBtn" data-toggle="modal" data-target="#friendModal"><i
+        <button type="button" class="btn btn-outline-info col-12" id="submitBtn"><i
                 class="fas fa-bullhorn"></i> Submit</button>
 </div>
 
         <!-- Modal after match -->
-        <div id="friendModal" class="modal fade" role="dialog">
+        <div id="friendModal" class="modal fade" role="dialog" aria-labelledby="friendModal" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -203,9 +203,6 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 
@@ -215,6 +212,7 @@
 
 <!-- Game JS-->
 <script type="text/javascript">
+$(document).ready(function() {
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
         // check the form
@@ -250,11 +248,12 @@
             $.post(currentURL + "/api/friends", newUser, function (data) {
                 $("#friend").text(data.name);
                 $("#friendPhoto").attr("src", data.photo);
-                $("#friendModal").modal("toggle");
+                $("#friendModal").modal("show");
             });
         } else {
             // if incomplete
             alert("Survey is incomplete!");
         }
     });
+});
 </script>
